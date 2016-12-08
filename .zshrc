@@ -152,7 +152,7 @@ export PATH=$PATH:~/V-REP_PRO_EDU_V3_3_0_64_Linux
 #########################################################
 source /opt/ros/indigo/setup.zsh
 source ~/catkin_ws/devel/setup.zsh
-export ROS_HOSTNAME=sakurai-Trusty64
+export ROS_HOSTNAME=`hostname -I`
 export ROS_MASTER_URI=http://${ROS_HOSTNAME}:11311
 alias cw='cd ~/catkin_ws'
 alias cs='cd ~/catkin_ws/src'
