@@ -4,7 +4,13 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
+let s:dein_repo_dir = '~/.vim/dein/repos/github.com/Shougo/dein.vim'
+
+" もしdeinがインストールされていなければcloneしてくる
+if !isdirectory(s:dein_repo_dir)
+  :call system('git clone https://github.com/Shougo/dein.vim ' . s:dein_repo_dir)
+endif
+execute 'set runtimepath^=' . s:dein_repo_dir
 
 " Required:
 call dein#begin(expand('~/.vim/dein'))
