@@ -4,33 +4,40 @@ if &compatible
 endif
 
 " Required:
-let s:dein_repo_dir = '~/.vim/dein/repos/github.com/Shougo/dein.vim'
+let s:dein_dir = expand('~/.vim/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 " もしdeinがインストールされていなければcloneしてくる
-if !isdirectory(s:dein_repo_dir)
-  :call system('git clone https://github.com/Shougo/dein.vim ' . s:dein_repo_dir)
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim ' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . s:dein_repo_dir
 endif
 execute 'set runtimepath^=' . s:dein_repo_dir
 
 " Required:
-call dein#begin(expand('~/.vim/dein'))
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
-" Let dein manage dein
-" Required:
-call dein#add('Shougo/dein.vim')
+  " Let dein manage dein
+  " Required:
+  call dein#add('Shougo/dein.vim')
 
-" Add or remove your plugins here:
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets')
-call dein#add('tyru/caw.vim.git') " コメントのトグル
-call dein#add('itchyny/lightline.vim')
-call dein#add('ctrlpvim/ctrlp.vim')
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('tyru/caw.vim.git') " コメントのトグル
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('ctrlpvim/ctrlp.vim')
 
-" You can specify revision/branch/tag.
-call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+  " You can specify revision/branch/tag.
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
-" Required:
-call dein#end()
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 
 " Required:
 filetype plugin indent on
@@ -79,9 +86,9 @@ set notitle
 "-------------------------
 " Key bind
 "-------------------------
-" Ctrl+/ toggles comment/uncomment
-nmap <C-_> <Plug>(caw:hatpos:toggle)
-vmap <C-_> <Plug>(caw:hatpos:toggle)
+" Ctrl+\ toggles comment/uncomment
+nmap <C-\> <Plug>(caw:hatpos:toggle)
+vmap <C-\> <Plug>(caw:hatpos:toggle)
 
 "-------------------------
 " lightline
