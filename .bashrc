@@ -176,34 +176,35 @@ export DATA_PATH=~/data
 #########################################################
 export NOSE_REDNOSE=1
 
-##########################################################
-## v-rep
-##########################################################
-export PATH=$PATH:~/V-REP_PRO_EDU_V3_3_0_64_Linux
-
 #########################################################
 # for ROS
 #########################################################
-source /opt/ros/indigo/setup.bash
+source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
-export ROS_HOSTNAME=`hostname -I`
+export ROS_HOSTNAME=`hostname -I | awk '{print $1;}'`
 export ROS_MASTER_URI=http://${ROS_HOSTNAME}:11311
 alias cw='cd ~/catkin_ws'
 alias cs='cd ~/catkin_ws/src'
 alias cm='cd ~/catkin_ws && catkin_make'
 
 #########################################################
-# for RU-Glue
-#########################################################
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-
-#########################################################
-# for ALE
-#########################################################
-export PATH=~/apps/Arcade-Learning-Environment-0.5.1:$PATH
-export ALE_DIR=~/apps/Arcade-Learning-Environment-0.5.1
-
-#########################################################
 # for commandline userbility  
 #########################################################
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+#########################################################
+# for Anaconda
+#########################################################
+export ANACONDA_PATH=~/anaconda2
+
+function conda()
+{
+  $ANACONDA_PATH/bin/conda $*
+}
+
+function activate()
+{
+  source $ANACONDA_PATH/bin/activate $1
+}
+alias deactivate='source $ANACONDA_PATH/bin/deactivate'
+
