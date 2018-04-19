@@ -118,9 +118,6 @@ if ! shopt -oq posix; then
 fi
 #[ -r /home/sakurai/.config/byobu/prompt ] && . /home/sakurai/.config/byobu/prompt   #byobu-prompt#
 
-# added by Anaconda2 4.0.0 installer
-export PATH="/home/sakurai/anaconda2/bin:$PATH"
-
 # git-completion.bash / git-prompt.sh
 #
 if [ -f ~/apps/bash/.git-completion.bash ]; then
@@ -144,11 +141,6 @@ export PS1="\n\[\033[1;32m\]\D{%m/%d(%a)} \t\[\033[00m\] \[\033[1;33m\][\H]:\w\[
 #export PATH=/usr/local/cuda-6.5/bin:$PATH
 #export LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64:$LD_LIBRARY_PATH
 #export LIBRARY_PATH=/usr/local/cuda-6.5/lib64:$LIBRARY_PATH
-
-##########################################################
-## export PYTHONPATH=$PYTHONPATH:~/anaconda/lib/python2.7
-##########################################################
-#export PYTHONPATH=$PYTHONPATH:~/caffe/python
 
 #########################################################
 # for byobu
