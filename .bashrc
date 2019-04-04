@@ -208,3 +208,7 @@ function activate()
 }
 alias deactivate='source $ANACONDA_PATH/bin/deactivate'
 
+#########################################################
+# for GUI
+#########################################################
+export DISPLAY=:0.0
