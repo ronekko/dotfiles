@@ -83,6 +83,9 @@ colorscheme molokai
 " not allow to change texts in the terminal's title bar
 set notitle
 
+" Disable alert sound
+set visualbell t_vb=
+
 "-------------------------
 " Key bind
 "-------------------------
