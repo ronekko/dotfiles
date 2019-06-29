@@ -193,22 +193,6 @@ alias cm='cd ~/catkin_ws && catkin_make'
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 #########################################################
-# for Anaconda
-#########################################################
-export ANACONDA_PATH=~/anaconda2
-
-function conda()
-{
-  $ANACONDA_PATH/bin/conda $*
-}
-
-function activate()
-{
-  source $ANACONDA_PATH/bin/activate $1
-}
-alias deactivate='source $ANACONDA_PATH/bin/deactivate'
-
-#########################################################
 # for GUI
 #########################################################
 export DISPLAY=:0.0
