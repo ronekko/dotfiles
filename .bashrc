@@ -201,7 +201,16 @@ function setxdisplay()
   export DISPLAY=$(echo $SSH_CLIENT | awk '{print $1}'):0.0
 }
 
+#########################################################
+# XKB
+#########################################################
 # Apply XKB keymap config
 # https://honmushi.com/2019/01/18/ubuntu-xkb/
 xkbcomp -I$HOME/.xkb $HOME/.xkb/keymap/mykbd $DISPLAY 2> /dev/null
+
+#########################################################
+# Bazel
+#########################################################
+export PATH="$PATH:$HOME/bin"
+source ~/.bazel/bin/bazel-complete.bash
 
