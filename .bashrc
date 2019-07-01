@@ -195,4 +195,9 @@ export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 #########################################################
 # for GUI
 #########################################################
-export DISPLAY=:0.0
+# export DISPLAY=:0.0
+function setxdisplay()
+{
+  export DISPLAY=$(echo $SSH_CLIENT | awk '{print $1}'):0.0
+}
+
