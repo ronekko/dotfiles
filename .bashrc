@@ -201,3 +201,7 @@ function setxdisplay()
   export DISPLAY=$(echo $SSH_CLIENT | awk '{print $1}'):0.0
 }
 
+# Apply XKB keymap config
+# https://honmushi.com/2019/01/18/ubuntu-xkb/
+xkbcomp -I$HOME/.xkb $HOME/.xkb/keymap/mykbd $DISPLAY 2> /dev/null
+

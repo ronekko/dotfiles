@@ -1,0 +1,4 @@
+xkb_keycodes "mycodes" {
+  <XFER> = 100;  // Henkan_Mode
+  <NFER> = 102;  // Muhenkan
+};
