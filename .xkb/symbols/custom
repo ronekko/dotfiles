@@ -1,6 +1,7 @@
 partial modifier_keys
 xkb_symbols "nihongo" {
   replace key <HENK> { [ Zenkaku_Hankaku ] };
-  replace key <MUHE> { [ Escape,Escape ] };
-  replace key <CAPS> { [ Escape,Escape ] };
+  replace key <MUHE> { [ Escape, Escape ] };
+  replace key <CAPS> { [ Escape, Escape ] };
+  replace key <INS> { [ Escape, Escape ] };
 };
