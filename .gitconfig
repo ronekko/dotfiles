@@ -7,7 +7,9 @@
   cmm = commit -m
   co = checkout
   cob = checkout -b
+  diffc = diff --cached
   difff = diff --word-diff
+  fep = fetch -p
 
   # いい感じのグラフでログを表示
   graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
@@ -15,6 +17,12 @@
   st = status
   stt = status -uno  # 行ごとの差分じゃなくて，単語レベルでの差分を色付きで表示する
 
+[merge]
+	ff = false
+
 [push]
 	default = current
+
+[pull]
+	ff = only
 
