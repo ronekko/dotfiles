@@ -5,6 +5,7 @@
   br = branch
   bra = branch -a
   cmm = commit -m
+  cmv = commit -v
   co = checkout
   cob = checkout -b
   diffc = diff --cached
