@@ -4,6 +4,7 @@
 [alias]
   br = branch
   bra = branch -a
+  brd = branch -d
   cmm = commit -m
   cmv = commit -v
   co = checkout
@@ -11,6 +12,7 @@
   diffc = diff --cached
   difff = diff --word-diff
   fep = fetch -p
+  restaged = restore --staged
 
   # いい感じのグラフでログを表示
   graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
@@ -30,4 +32,8 @@
 [core]
   editor = vim -c \"set fenc=utf-8\"
   excludesfile = ~/.gitignore_global
+
+[pager]
+  branch = "less -F -X"
+  log = "less -F -X"
 
