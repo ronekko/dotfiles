@@ -177,17 +177,6 @@ export DATA_PATH=~/data
 export NOSE_REDNOSE=1
 
 #########################################################
-# for ROS
-#########################################################
-source /opt/ros/kinetic/setup.bash
-source ~/catkin_ws/devel/setup.bash
-export ROS_HOSTNAME=`hostname -I | awk '{print $1;}'`
-export ROS_MASTER_URI=http://${ROS_HOSTNAME}:11311
-alias cw='cd ~/catkin_ws'
-alias cs='cd ~/catkin_ws/src'
-alias cm='cd ~/catkin_ws && catkin_make'
-
-#########################################################
 # for commandline userbility  
 #########################################################
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
