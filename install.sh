@@ -7,3 +7,6 @@ ln -sf ~/dotfiles/.vim ~/
 ln -sf ~/dotfiles/.xkb ~/
 ln -sf ~/dotfiles/.zshrc ~/
 
+touch ~/.gitconfig.local
+touch ~/.gitignore_global
+
