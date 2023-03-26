@@ -187,7 +187,8 @@ export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # export DISPLAY=:0.0
 function setxdisplay()
 {
-  export DISPLAY=$(echo $SSH_CLIENT | awk '{print $1}'):0.0
+  # export DISPLAY=$(echo $SSH_CLIENT | awk '{print $1}'):0.0
+  export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
 }
 # Workaround for WSL can't render meshes in Rviz.
 # https://answers.ros.org/question/394135/robot-meshes-not-visible-in-rviz-windows11-wsl2/?answer=403496#post-id-403496
