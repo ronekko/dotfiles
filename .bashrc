@@ -202,8 +202,7 @@ export LIBGL_ALWAYS_INDIRECT=0
 xkbcomp -I$HOME/.xkb $HOME/.xkb/keymap/mykbd $DISPLAY 2> /dev/null
 
 #########################################################
-# Bazel
+# direnv
 #########################################################
-export PATH="$PATH:$HOME/bin"
-source ~/.bazel/bin/bazel-complete.bash
+eval "$(direnv hook bash)"
 
