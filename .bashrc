@@ -200,6 +200,10 @@ function setxdisplay()
 {
   export DISPLAY=$(echo $SSH_CLIENT | awk '{print $1}'):0.0
 }
+# Workaround for WSL can't render meshes in Rviz.
+# https://answers.ros.org/question/394135/robot-meshes-not-visible-in-rviz-windows11-wsl2/?answer=403496#post-id-403496
+export LIBGL_ALWAYS_SOFTWARE=1
+export LIBGL_ALWAYS_INDIRECT=0
 
 #########################################################
 # XKB
